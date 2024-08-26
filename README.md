@@ -4,10 +4,10 @@ This program will simulate a distribution application that calculates the sum of
 <br>
 
 This package contains 4 files:  
-&ensp; &ensp; &ensp; &ensp; - DIYAppController.java 
-&ensp; &ensp; &ensp; &ensp; - DIYAppWorker.java 
-&ensp; &ensp; &ensp; &ensp; - genNum.py 
-&ensp; &ensp; &ensp; &ensp; - README.md
+&ensp; &ensp; &ensp; &ensp; - DIYAppController.java    
+&ensp; &ensp; &ensp; &ensp; - DIYAppWorker.java    
+&ensp; &ensp; &ensp; &ensp; - genNum.py    
+&ensp; &ensp; &ensp; &ensp; - README.md   
 <br><br>
 
 genNum.py is a Python script that generates 5000 random float numbers between the values of 0 and 1 with a precision of 10 digits  
