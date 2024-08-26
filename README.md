@@ -1,15 +1,20 @@
-This program will simulate a distribution application that calculates the sum of a large data set and prints it out to the terminal using a client-server model  
+# DIYDistributedApp 
+
+This program will simulate a distribution application that calculates the sum of a large data set and prints it out to the terminal using a client-server model.  
 <br>
 
 This package contains 4 files:  
-&ensp; &ensp; &ensp; &ensp; DIYAppController.java, DIYAppWorker.java, genNum.py, and README.txt
+&ensp; &ensp; &ensp; &ensp; - DIYAppController.java 
+&ensp; &ensp; &ensp; &ensp; - DIYAppWorker.java 
+&ensp; &ensp; &ensp; &ensp; - genNum.py 
+&ensp; &ensp; &ensp; &ensp; - README.md
 <br><br>
 
-genNum.py is a Python script that generates 5000 random float numbers between 0 and 1 with a precision of 10 digits  
+genNum.py is a Python script that generates 5000 random float numbers between the values of 0 and 1 with a precision of 10 digits  
 &ensp; &ensp; &ensp; &ensp; - this script can be modified to the user's liking if they would like to have more/less numbers and/or more/less precision  
 &ensp; &ensp; &ensp; &ensp; - to do this, modify this line:  
 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - rand = [round(random.random(), 10) for _ in range(5000)]  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - 10 is the precision and 5000 is the total number of random float numbers  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - 10 is the precision and 5000 is the total number of random float numbers  
 &ensp; &ensp; &ensp; &ensp; - A user can also name the file that is generated to whatever name they want, as long as it's a .dat or .txt file (default is rand.dat)  
 <br>
 
@@ -27,7 +32,7 @@ DIYAppController (Server) Description:
 <br>
 
 DIYAppWorker (Client) Description:  
-&ensp; &ensp; &ensp; &ensp; This class accepts data slices from the controller, sums it up, and sends back the partial sum of the data slice  
+&ensp; &ensp; &ensp; &ensp; - This class accepts data slices from the controller, sums it up, and sends back the partial sum of the data slice  
 <br>
 
 Compile:  
