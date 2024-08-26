@@ -19,14 +19,14 @@ genNum.py is a Python script that generates 5000 random float numbers between th
 <br>
 
 DIYAppController (Server) Description:  
-&ensp; &ensp; &ensp; &ensp; This class calculates the total sum between all workers and prints it out to the console  
+&ensp; &ensp; &ensp; &ensp; - This class calculates the total sum between all workers and prints it out to the console  
 <br>
-&ensp; &ensp; &ensp; &ensp; The first thing this class does is ask the user to enter in a .dat / .txt file containing floating-point values (>= 5,000 instances)  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - after the user enters in a valid file, the controller will continue by reading that file with Java's Scanner  
+&ensp; &ensp; &ensp; &ensp; - The first thing this class does is ask the user to enter in a .dat / .txt file containing floating-point values (>= 5,000 instances)  
+&ensp; &ensp; &ensp; &ensp; - after the user enters in a valid file, the controller will continue by reading that file with Java's Scanner  
 <br>
-&ensp; &ensp; &ensp; &ensp; Inside this class are 2 handler classes, one for the server and the other is for the clients:  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; ServerHandler - starts the server and creates new worker threads  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; WorkerHandler - (1): handles the communication between the controller and the workers  
+&ensp; &ensp; &ensp; &ensp; - Inside this class are 2 handler classes, one for the server and the other is for the clients:  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 1. ServerHandler - starts the server and creates new worker threads  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 2. WorkerHandler - (1): handles the communication between the controller and the workers  
 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &nbsp; &nbsp; (2): reads data slices from the queue and sends them to the workers  
 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &nbsp; &nbsp; (3): adds the partial sums sent by the workers to the running total in the main thread  
 <br>
@@ -36,32 +36,33 @@ DIYAppWorker (Client) Description:
 <br>
 
 Compile:  
-&ensp; &ensp; &ensp; &ensp; To compile the source code files use:  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; javac DIYAppController.java  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; javac DIYAppWorker.java  
-&ensp; &ensp; &ensp; &ensp; These will create the following executable files:  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; DIYAppController.class                  DIYAppController$ServerHandler.class  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; DIYAppController$WorkerHandler.class    DIYAppWorker.class  
+&ensp; &ensp; &ensp; &ensp; - To compile the source code files use:  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - javac DIYAppController.java  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - javac DIYAppWorker.java  
+&ensp; &ensp; &ensp; &ensp; - These will create the following executable files:  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - DIYAppController.class    
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - DIYAppController$ServerHandler.class    
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - DIYAppController$WorkerHandler.class    
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - DIYAppWorker.class
 <br>
 
 Run:  
-&ensp; &ensp; &ensp; &ensp; To run the program first start the controller, then start the workers:  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; java DIYAppController (port #)  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; java DIYAppWorker localhost (or 127.0.0.1) (port #)  
+&ensp; &ensp; &ensp; &ensp; - To run the program first start the controller, then start the workers:  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - java DIYAppController (port #)  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - java DIYAppWorker localhost (or 127.0.0.1) (port #)  
 
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; A user can either use 2 or more separate windows of an IDE to run the program or  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; A user can open multiple terminals and start the server on one then run the client command multiple times  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - A user can either use 2 or more separate windows of an IDE to run the program or  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - A user can open multiple terminals and start the server on one then run the client command multiple times  
 
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; Since I am using the localhost address, this code will only work on the same machine  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - Since I am using the localhost address, this code will only work on the same machine  
 
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; The controller can only work with large data files with at least 5,000 instances or more  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - it can be modified to run with a smaller number of instances if the sliceTotal and dataSlice values are changed  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - Ex: sliceTotal = 20, dataSlice = 10 -> queue can hold 200 instances at a given time  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - Note:  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; sliceTotal is the minimum number of dataSlices needed to start the controller and  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; is the maximum number of dataSlices allowed at any given time  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; dataSlice is the maximum number of float values that are allowed to be  concatenated together in a string  
-&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; that is to be sent to the workers  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - The controller can only work with large data files with at least 5,000 instances or more  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - it can be modified to run with a smaller number of instances if the sliceTotal and dataSlice values are changed  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - Ex: sliceTotal = 20, dataSlice = 10 -> queue can hold 200 instances at a given time  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - Note:  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; - sliceTotal is the minimum number of dataSlices needed to start the controller and  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; is the maximum number of dataSlices allowed at any given time  
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; dataSlice is the maximum number of float values that are allowed to be  concatenated together in a string that is to be sent to the workers  
 <br>
 
 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; If a user is using VSCode, then they can create a launch.json file using the following link as a guide:  
